@@ -12,7 +12,12 @@ return new class extends Migration
      */
     public function up()
     {
-        DB::statement("CREATE VIEW `ingresos_vista` AS select `parqueadero1`.`registros`.`id` AS `id`,`parqueadero1`.`vehiculos`.`placa` AS `placa`,`parqueadero1`.`registros`.`entrada` AS `entrada`,`parqueadero1`.`vehiculos`.`tipo` AS `tipo`,`parqueadero1`.`registros`.`pagado` AS `pagado` from (`parqueadero1`.`registros` join `parqueadero1`.`vehiculos` on(`parqueadero1`.`registros`.`vehiculo_id` = `parqueadero1`.`vehiculos`.`id`))");
+        DB::statement("
+        CREATE VIEW ingresos_vista AS
+        SELECT registros.id AS id, vehiculos.placa AS placa, registros.entrada AS entrada, vehiculos.tipo AS tipo, registros.pagado AS pagado
+        FROM registros
+        JOIN vehiculos ON registros.vehiculo_id = vehiculos.id
+    ");
     }
 
     /**
