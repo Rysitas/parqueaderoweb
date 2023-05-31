@@ -1,0 +1,18 @@
+.filter-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .filter-input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+  }
+  
+  .filter-text {
+    font-weight: bold;
+    margin-right: 0.5rem;
+  }
+  
