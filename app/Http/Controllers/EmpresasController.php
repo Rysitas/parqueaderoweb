@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Empresa;
+use Illuminate\Support\Facades\Storage;
 
 class EmpresasController extends Controller
 {
@@ -57,19 +58,13 @@ class EmpresasController extends Controller
         $empresa = new Empresa($request->all());
 
         // Guardar imagen
-        if ($request->hasFile('logo') && $request->file('logo')->isValid()) {
-            $logo = $request->file('logo'); 
-            $destinationPath = public_path('img/empresa/');
-            
-            if (!file_exists($destinationPath)) {
-                mkdir($destinationPath, 0755, true);
-            }
-            
-            $filename = $logo->getClientOriginalName();
-            $logo->move($destinationPath, $filename);
-            $empresa->logo = 'img/empresa/' . $filename;
+        $logo = $request->file('logo');
 
-        }
+        if ($logo->isValid()) {
+            $filename = $logo->getClientOriginalName();
+            $logo->storeAs('img/empresa', $filename, 'local');
+            $empresa->logo = 'img/empresa/' . $filename;
+        }        
 
         $empresa->save();
 
@@ -101,31 +96,19 @@ class EmpresasController extends Controller
         $empresa->fill($request->all());
         // Guardar imagen
         if ($request->hasFile('logo') && $request->file('logo')->isValid()) {
-
-            // Obtenemos la ruta del logo actual
-            $logo_path = public_path($empresa->getOriginal('logo'));
-
-            // Verificamos que el archivo exista antes de intentar eliminarlo
-            if ($empresa->getOriginal('logo') != NULL && file_exists($logo_path)) {
-                unlink($logo_path);
+            $logo_path = $empresa->logo; // Ruta del logo actual
+            
+            if ($logo_path) {
+                // Elimina el logo actual
+                Storage::disk('local')->delete($logo_path);
             }
-            
-
-            $logo = $request->file('logo'); 
-            $destinationPath = public_path('img/empresa/');
-            
-            if (!file_exists($destinationPath)) {
-                mkdir($destinationPath, 0755, true);
-            }
-            
+        
+            $logo = $request->file('logo');
             $filename = $logo->getClientOriginalName();
-            $logo->move($destinationPath, $filename);
-
+            $logo->storeAs('img/empresa', $filename, 'local');
             $empresa->logo = 'img/empresa/' . $filename;
-            
-
-
         }
+        
 
         $empresa->save();
 

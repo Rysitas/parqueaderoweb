@@ -6,8 +6,8 @@
 
 @if ($empresa && $empresa->logo)
     <!-- Mostrar logo y nombre de la empresa -->
-    <img src="{{ asset($empresa->logo) }}" alt="Logo" style="border-radius: 50%; max-width: 200px;">
+    <img src="{{ secure_asset($empresa->logo) }}" alt="Logo" style="border-radius: 50%; max-width: 200px;">
 @else
     <!-- Mostrar mensaje de que la empresa no existe -->
-    <img src="{{ asset('img/logo.png') }}" alt="Logo" style="border-radius: 50%; max-width: 200px;">
+    <img src="{{ secure_asset('img/logo.png') }}" alt="Logo" style="border-radius: 50%; max-width: 200px;">
 @endif
