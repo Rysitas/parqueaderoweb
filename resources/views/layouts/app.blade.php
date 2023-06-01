@@ -28,7 +28,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/js/bootstrap.min.js"></script>
     <script src="{{ secure_asset('js/teclasfuncion.js') }}"></script>
     <script src="{{ secure_asset('resources/js/app.js') }}"></script>
-    <link href="{{ secure_asset('resources/css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
     {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
 
