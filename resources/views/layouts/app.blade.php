@@ -21,11 +21,12 @@
         @yield('styles')
 
         <!-- Scripts -->
+        <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://use.fontawesome.com/61d0f4506d.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js" ></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/js/bootstrap.min.js"></script>
-        <script src="{{ asset('js/teclasfuncion.js') }}"></script>
+        <script src="{{ secure_asset('js/teclasfuncion.js') }}"></script>
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
