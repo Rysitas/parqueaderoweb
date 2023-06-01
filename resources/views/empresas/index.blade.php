@@ -44,7 +44,7 @@
                                         <td><b>Logotipo:</b></td>
                                         @if($empresa->logo)
                                         <td>
-                                            <img src="{{ Storage::url($empresa->logo) }}" alt="Logo" style="border-radius: 50%; max-width: 100px;">
+                                            <img src="{{ secure_asset(Storage::url($empresa->logo)) }}" alt="Logo" style="border-radius: 50%; max-width: 100px;">
                                         </td>
                                                                                 @else
                                         <td><img src="{{ secure_asset('img/logo.png') }}" alt="Logo" style="border-radius: 50%; max-width: 100px;"></td>
