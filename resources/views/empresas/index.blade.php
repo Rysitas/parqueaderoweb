@@ -45,7 +45,7 @@
                                         @if($empresa->logo)
                                         <td><img src="{{ $empresa->logo }}" alt="Logo" style="border-radius: 50%; max-width: 100px;"></td>
                                         @else
-                                        <td><img src="{{ asset('img/logo.png') }}" alt="Logo" style="border-radius: 50%; max-width: 100px;"></td>
+                                        <td><img src="{{ secure_asset('img/logo.png') }}" alt="Logo" style="border-radius: 50%; max-width: 100px;"></td>
                                         @endif
                                     </tr>
                                 </tbody>

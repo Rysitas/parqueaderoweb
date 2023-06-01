@@ -82,6 +82,6 @@
     </div>
 
 </x-app-layout>
-<script src="{{ asset('js/datosIngreso.js') }}"></script>
-<link href="{{ asset('css/crearIngreso.css') }}" rel="stylesheet">
+<script src="{{ secure_asset('js/datosIngreso.js') }}"></script>
+<link href="{{ secure_asset('css/crearIngreso.css') }}" rel="stylesheet">
 
