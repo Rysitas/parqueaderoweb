@@ -27,8 +27,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/js/bootstrap.min.js"></script>
     <script src="{{ secure_asset('js/teclasfuncion.js') }}"></script>
-    
-    @vite([secure_asset('resources/css/app.css'), secure_asset('resources/js/app.js')])
+    <script src="{{ secure_asset('resources/js/app.js') }}"></script>
+    <link href="{{ secure_asset('resources/css/app.css') }}" rel="stylesheet">
+
+    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
 
     <!-- Styles -->
     @livewireStyles
