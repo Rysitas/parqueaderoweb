@@ -54,20 +54,20 @@ class EmpresasController extends Controller
             'iva' => 'required|in:Si,No',
             'logo' => 'image'
         ]);
-
+    
         $empresa = new Empresa($request->all());
-
+    
         // Guardar imagen
         $logo = $request->file('logo');
-
+    
         if ($logo->isValid()) {
             $filename = $logo->getClientOriginalName();
-            $logo->storeAs('img/empresa', $filename, 'local');
+            $logo->storeAs('public/img/empresa', $filename);
             $empresa->logo = 'img/empresa/' . $filename;
         }        
-
+    
         $empresa->save();
-
+    
         return redirect()->route('dashboard')->with('success', 'Empresa creada correctamente');
     }
 
@@ -91,7 +91,7 @@ class EmpresasController extends Controller
             'iva' => 'required|in:Si,No',
             'logo' => 'image'
         ]);
-
+    
         
         $empresa->fill($request->all());
         // Guardar imagen
@@ -100,21 +100,19 @@ class EmpresasController extends Controller
             
             if ($logo_path) {
                 // Elimina el logo actual
-                Storage::disk('local')->delete($logo_path);
+                Storage::delete('public/'.$logo_path);
             }
         
             $logo = $request->file('logo');
             $filename = $logo->getClientOriginalName();
-            $logo->storeAs('img/empresa', $filename, 'local');
+            $logo->storeAs('public/img/empresa', $filename);
             $empresa->logo = 'img/empresa/' . $filename;
         }
         
-
+    
         $empresa->save();
-
+    
         return redirect()->route('dashboard')->with('success', 'Empresa actualizada correctamente');
     }
-
-    
     
 }
