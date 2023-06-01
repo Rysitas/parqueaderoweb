@@ -28,7 +28,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/js/bootstrap.min.js"></script>
     <script src="{{ secure_asset('js/teclasfuncion.js') }}"></script>
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <script src="{{ mix('js/app.js') }}"></script>
+
+    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
 
     <!-- Styles -->
     @livewireStyles
