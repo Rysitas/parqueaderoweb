@@ -1,4 +1,4 @@
-console.log("El archivo filtroNoPagado.js se ha cargado correctamente");
+console.log("El archivo filtroNoPagado.js se ha cargado correctamente -- se usa para el filtro de los no pagos");
 
 $(document).ready(function() {
     // Variable para almacenar el temporizador

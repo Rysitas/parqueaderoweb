@@ -1,3 +1,5 @@
+console.log("El archivo datosingreso.js se ha cargado correctamente - se usa para validaciones en ingresos");
+
 function validarPlaca(placa) {
   const regex = /^[a-zA-Z]{3}\d{2}[a-zA-Z0-9]{0,2}$/;
   return regex.test(placa);

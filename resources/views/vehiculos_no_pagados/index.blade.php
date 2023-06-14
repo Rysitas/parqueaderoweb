@@ -46,4 +46,4 @@
 
 </x-app-layout>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="{{ secure_asset('js/filtroPlacaNoPagado.js') }}"></script>
+<script src="{{ asset('js/filtroPlacaNoPagado.js') }}"></script>

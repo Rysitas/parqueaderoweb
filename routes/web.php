@@ -75,6 +75,7 @@ Route::resource('tarifas', TarifasController::class)->only(['index']);
 
 //Empresa user
 Route::resource('empresas', EmpresasController::class)->only(['index']);
+Route::redirect('empresas.index', '/dashboard'); // Redirecciona '/empresas' a '/dashboard'
 
 //Servicios user
 Route::resource('servicios', ServiciosController::class)->only(['index']);
@@ -106,4 +107,3 @@ Route::get('/pagos', [PagoController::class, 'index'])->name('pagos.index');
 Route::get('/pagos/create', [PagoController::class, 'create'])->name('pagos.create');
 Route::post('/pagos', [PagoController::class, 'store'])->name('pagos.store');
 Route::get('/pagos/{id}', [PagoController::class, 'show'])->name('pagos.show');
-// Route::resource('pagos', PagoController::class);

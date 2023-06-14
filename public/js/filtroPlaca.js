@@ -1,4 +1,4 @@
-console.log("El archivo filtroPlaca.js se ha cargado correctamente");
+console.log("El archivo filtroPlaca.js se ha cargado correctamente - se usa para el filtro de los pagos");
 
 
 $(document).ready(function() {

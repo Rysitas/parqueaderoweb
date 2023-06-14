@@ -1,3 +1,5 @@
+console.log("El archivo teclasfuncion.js se ha cargado correctamente -- Este sirve para entrar con F9 Y F10 a los pagos y creaciones de ingresos");
+
 document.addEventListener('keydown', function(event) {
     if (event.code === 'F9') {
         event.preventDefault();

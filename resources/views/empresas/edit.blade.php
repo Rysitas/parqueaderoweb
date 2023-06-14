@@ -133,7 +133,7 @@
                                 <label for="logo" class="col-md-4 col-form-label text-md-right">{{ __('Logo') }}</label>
                                 <div class="col-md-6">
                                     @if ($empresa->logo)
-                                        <img src="{{ secure_asset($empresa->logo) }}" alt="Logo actual" style="max-width: 100px;">
+                                        <img src="{{ Storage::url($empresa->logo) }}" alt="Logo actual" style="max-width: 100px;;">
                                     @else
                                         <p>No se ha cargado ningún logo para la empresa</p>
                                     @endif
